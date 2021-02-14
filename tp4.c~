@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include "tp1.h"
+
+
+
+int puissance(int e){
+  int res=1;
+  while(e>0){
+    res *= 2;
+    e--;
+  }
+  return res;
+
+}
+
+long unsigned anf(long unsigned fb){
+  
+  int i = Log2n(Log2n(fb))+1;
+  int sf = puissance(i)/2;
+    print_binary(fb);    
+  for(;i;i--){
+    printf("sf = %d\n",sf);
+    fb ^= (fb >> sf);
+    print_binary(fb);
+    sf/=2;
+  }     
+
+  
+
+
+}
+
+int main(){
+
+  printf("%d\n",puissance(2));
+  unsigned int x = 0x65;
+  anf(0x65);  
+
+
+  return 0;
+}
